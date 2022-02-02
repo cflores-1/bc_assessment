@@ -21,16 +21,17 @@ the middle row. If it was O's turn, they could make a move in either of those sa
 If the input grid represents a board for which either X or O has already won, the return array should simply be [0,0].
 */
 
-//define function with one argument
-//return an array of 2 numbers
+//completed
 
+//taken from example above:
 const str = `X X
 \n OO
 \nXOO`;
 
+//define function take in the string as a parameter
 const ticTacToe = (str) => {
     let split_ = str.split('\n').join('');
-    let winners = [ 0, 0 ];
+    let winners = [ 0, 0 ]; //this is what will be returned
 
     let wBoard = [
         //R

@@ -6,8 +6,27 @@ The function should return the initial array sorted by the numbers or the median
 For example:
 medianSort([3, [-2, 4, 9]]) à [3, [-2, 4, 9]]
 The median of [-2, 4, 9] is 4, so we should sort that array after the 3.
-medianSort([[12, 9, 1, 25], 4]) à [4, [12, 9, 1, 25]] The median of [12, 9, 1, 25] is 10.5, and 10.5 is greater than 4.
+
+medianSort([[12, 9, 1, 25], 4]) à [4, [12, 9, 1, 25]] 
+The median of [12, 9, 1, 25] is 10.5, and 10.5 is greater than 4.
+
 medianSort([[2.4, 0.2, 9.8], 0, [-1], [-9, -4]]) à [[-9, -4], [-1], 0, [2.4, 0.2, 9.8]]
 The median of [2.4, 0.2, 9.8] is 2.4. The median of [-1] is -1. The median of [-9, -4] is -6.5. 
 Therefore, the sorted order of these medians is [-6.5, -1, 0, 2.4]
 */
+
+//Ran out of time to complete... sudo code below. 
+
+const arr = [[12, 9, 1, 25], 4]
+
+//define function medianSort, takes in an array as params. 
+const medianSort = (arr) => {
+
+    //using the math method find the median
+
+    //sort the array
+    arr.sort(function(a,b) {return a-b});
+
+    //returns the array sorted 
+}
+console.log(medianSort(arr))

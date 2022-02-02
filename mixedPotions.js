@@ -29,13 +29,17 @@ The result's concentration of ingredient1 is 125. We can determine this because 
 of concentration in 100 units of volume and the second potion has 125 units of concentration in 300  units of volume, and (50*100 + 150*300)/(100 + 300) = 125. 
 */
 
+
+//Not fully debugged...
+
 const potionArr = [
     {
         volume: 100, 
         ingredients: { ingredient1: 50, ingredient2: 20, ingredientA: 500 }
-    },  {volume: 300, 
+    },  
+    {   volume: 300, 
         ingredients: { ingredient1: 150, ingredientA: 300, ingredientB: 950 }
-    },
+    }
 ];
 
 const mixedPotions = (potionArr) => {
@@ -55,21 +59,22 @@ const mixedPotions = (potionArr) => {
 
         //loop through the ingredient keys
         for (let j = 0; j < ingredKeys.length; j++) {
-            let ingrediantName = ingredKeys[j];
-            let conUnit = potion.ingredients[ingrediantName];
+            let ingredientName = ingredKeys[j];
+            let conUnit = potion.ingredients[ingredientName];
             let concenProd = conUnit * potion.vol;
+            //console.log(concenProd)
             
-
             //if else to add to the concenProd
-            if (concen.ingredients[ingrediantName]) {
-                concen.ingredients[ingrediantName] += concenProd;
+            if (concen.ingredients[ingredientName]) {
+                concen.ingredients[ingredientName] += concenProd;
             } else {
-                concen.ingredients[ingrediantName] = concenProd;
+                concen.ingredients[ingredientName] = concenProd;
             }
         }
     }
 
     let resultObjKeys = Object.keys(concen.ingredients);
+    console.log(resultObjKeys)
 
     for (let i = 0; i < resultObjKeys.length; i++) {
         concen.ingredients[resultObjKeys[i]] /= concen.vol;
