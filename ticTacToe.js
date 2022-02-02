@@ -23,3 +23,54 @@ If the input grid represents a board for which either X or O has already won, th
 
 //define function with one argument
 //return an array of 2 numbers
+
+const str = `X X
+\n OO
+\nXOO`;
+
+const ticTacToe = (str) => {
+    let split_ = str.split('\n').join('');
+    let winners = [ 0, 0 ];
+
+    let wBoard = [
+        //R
+        [0,1,2],
+        [3,4,5],
+        [6,7,8],
+        //C
+        [0,3,6],
+        [1,4,7],
+        [2,5,8],
+        //
+        [0,4,8],
+        [2,4,6]
+    ];
+
+    //loop through the winning board
+    for (let arr of wBoard) {
+        let x = 0;
+        let o = 0;
+        let z = 0;
+
+        //loop through array
+        for (let i of arr) {
+            if (split_[i] === 'X') {
+                x += 1;
+            } else if (split_[i] === 'O') {
+                o += 1;
+            } else if (split_[i] === ' ') {
+                z +=1;
+            }
+        }
+        //if both conditions met add to winners
+        if (x === 2 && z === 1) {
+            winners[0] += 1;
+        }
+
+        if (o === 2 && z === 1) {
+            winners[1] += 1;
+        }
+    }
+    return winners;
+}
+console.log(ticTacToe(str));

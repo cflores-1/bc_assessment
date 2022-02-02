@@ -47,6 +47,7 @@ const mixedPotions = (potionArr) => {
     //loop through the potion array
     for (let i = 0; i < potionArr.length; i++) {
         let potion = potionArr[i];
+        //console.log(potion)
 
         let ingredKeys = Object.keys(potion.ingredients); //returns an array whose elements are strings corresponding to the enumerable properties found directly upon object
         //add the potion volume to the concentration volume
@@ -54,15 +55,16 @@ const mixedPotions = (potionArr) => {
 
         //loop through the ingredient keys
         for (let j = 0; j < ingredKeys.length; j++) {
-            let ingredName = ingredKeys[j];
-            let cUnit = potion.ingredients[ingredName];
-            let concenProd = cUnit * potion.vol;
+            let ingrediantName = ingredKeys[j];
+            let conUnit = potion.ingredients[ingrediantName];
+            let concenProd = conUnit * potion.vol;
+            
 
             //if else to add to the concenProd
-            if (concen.ingredients[ingredName]) {
-                concen.ingredients[ingredName] += concenProd;
+            if (concen.ingredients[ingrediantName]) {
+                concen.ingredients[ingrediantName] += concenProd;
             } else {
-                concen.ingredients[ingredName] = concenProd;
+                concen.ingredients[ingrediantName] = concenProd;
             }
         }
     }
@@ -70,9 +72,8 @@ const mixedPotions = (potionArr) => {
     let resultObjKeys = Object.keys(concen.ingredients);
 
     for (let i = 0; i < resultObjKeys.length; i++) {
-        concen.ingredients[resultObjKeys[i]] /= concen.vol
+        concen.ingredients[resultObjKeys[i]] /= concen.vol;
     }
-
     return concen;
-
 };
+console.log(mixedPotions(potionArr));
