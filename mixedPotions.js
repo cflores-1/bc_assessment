@@ -48,7 +48,19 @@ const mixedPotions = (potionArr) => {
     for (let i = 0; i < potionArr.length; i++) {
         let potion = potionArr[i];
 
-        let ingredKeys = 
+        let ingredKeys = Object.keys(potion.ingredients);
+        //add the potion volume to the concentration volume
+        concen.vol += potion.vol;
+
+        //loop through the ingredient keys
+        for (let j = 0; j < ingredKeys.length; j++) {
+            let ingredName = ingredKeys[j];
+            let cUnit = potion.ingredients[ingredName];
+            let concenProd = cUnit * potion.vol;
+
+            //if else to add to the concenProd
+            //if (concen)
+        }
     }
 
 };
